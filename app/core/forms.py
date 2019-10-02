@@ -1,13 +1,13 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField, TextAreaField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, InputRequired
 
 
 class AddBookForm(FlaskForm):
     title = StringField("Title", validators=[DataRequired()])
     author = StringField("Author", validators=[DataRequired()])
     description = TextAreaField("Description", validators=[DataRequired()])
-    pages_no = IntegerField("Number of pages")
+    pages_no = IntegerField("Number of pages", validators=[InputRequired()])
     submit = SubmitField("Add to library")
 
     def validate_pages_no(self, pages_no):

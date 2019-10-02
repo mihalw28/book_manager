@@ -1,18 +1,19 @@
 from flask import flash, redirect, render_template, url_for
 
-from app import app, db
-from app.forms import AddBookForm
+from app import db
+from app.core.forms import AddBookForm
 from app.models import Book
+from app.core import bp
 
 
-@app.route("/")
-@app.route("/index")
+@bp.route("/")
+@bp.route("/index")
 def index():
     """Function for rendering template on 2 priary routes."""
     return render_template("index.html", title="Home")
 
 
-@app.route("/add_book", methods=["GET", "POST"])
+@bp.route("/add_book", methods=["GET", "POST"])
 def add_book():
     """Function adds book to database."""
     form = AddBookForm()
@@ -27,5 +28,5 @@ def add_book():
         db.session.add(book)
         db.session.commit()
         flash(f"The book {form.title.data} has been added to the library.")
-        return redirect(url_for("index"))
+        return redirect(url_for("core.index"))
     return render_template("add_book.html", title="Add Book", form=form)

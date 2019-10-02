@@ -1,5 +1,10 @@
-from app import app, db
+from app import create_app, db
 from app.models import Book
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run()
 
 
 @app.shell_context_processor

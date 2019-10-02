@@ -9,8 +9,8 @@
   <body>
     <div>
       Book manager: 
-      <a href="{{ url_for('index') }}">Home</a>
-      <a href="{{ url_for('add_book') }}">Add</a>
+      <a href="{{ url_for('core.index') }}">Home</a>
+      <a href="{{ url_for('core.add_book') }}">Add</a>
     </div>
     <hr>
     {% with messages = get_flashed_messages() %}
