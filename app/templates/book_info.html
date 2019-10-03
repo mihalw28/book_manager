@@ -1,0 +1,21 @@
+<td>
+  <ul>
+    <li>Title : {{ b.title }}</li>
+    <li>Author : {{ b.author }}</li>
+    <li>Description : {{ b.description }}</li>
+    <li>Number of pages : {{ b.pages_no }}</li>
+    <li>Added date: {{ b.added_date.strftime("%Y-%m-%d") }}</li>
+  </ul>
+  <p>
+    <form method="POST" action="{{ url_for('core.delete_book') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"></input>
+      <input type="hidden" name="id" value="{{ b.id }}"></input>
+      <button type="submit">Delete</button>
+    </form>
+    <form method="POST" action="{{ url_for('core.view_book') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"></input>
+      <input type="hidden" name="id" value="{{ b.id }}"></input>
+      <button type="submit">View</button>
+    </form>
+  </p>
+</td>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Preview</h1>
+<body>
+  <ul>
+    <li>Title : {{ book.title }}</li>
+    <li>Author : {{ book.author }}</li>
+    <li>Description : {{ book.description }}</li>
+    <li>Number of pages : {{ book.pages_no }}</li>
+    <li>Added date : {{ book.added_date.strftime("%Y-%m-%d") }}</li>
+  </ul>
+  <p>
+    <form method="POST" action="{{ url_for('core.update_book') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"></input>
+      <button type="submit">Update</button>
+    </form>
+  </p>
+</body>
+
+{% endblock %}
