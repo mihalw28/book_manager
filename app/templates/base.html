@@ -11,6 +11,7 @@
       Book manager: 
       <a href="{{ url_for('core.index') }}">Home</a>
       <a href="{{ url_for('core.add_book') }}">Add</a>
+      <a href="{{ url_for('core.all_books') }}">All</a>
     </div>
     <hr>
     {% with messages = get_flashed_messages() %}

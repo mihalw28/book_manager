@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>List of all books.</h1>
+<ul>
+  {% for b in books %}
+    {% include "book_info.html" %}
+  {% endfor %}
+</ul>
+{% endblock %}
