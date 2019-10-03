@@ -15,7 +15,17 @@
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"></input>
       <button type="submit">Update</button>
     </form>
+    <form method="POST" action="{{ url_for('core.generate_link') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"></input>
+      <input type="hidden" name="id" value="{{ book.id }}"></input>
+      <button type="submit">Generate link</button>
+    </form>
   </p>
+  {% if link %}
+    <p>
+      {{ "Direct link for choosen book:" }} <b>{{ link }}</b>
+    </p>
+  {% endif %}
 </body>
 
 {% endblock %}

@@ -2,8 +2,6 @@ import unittest
 
 from flask import url_for
 
-from app import db
-from app.models import Book
 from tests.base import TestBase
 from tests.helper import add_book
 
@@ -25,12 +23,13 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Number of pages", response.data)
         self.assertIn(b"Add book", response.data)
+        self.assertIn(b"Add to library", response.data)
 
     def test_all_book_page(self):
         """
         Test all_books page behavior.
         """
-        book = add_book("Epic Book", "Famous Writer", "Amazing book...", 5)
+        add_book("Epic Book", "Famous Writer", "Amazing book...", 5)
         response = self.client.get(url_for("core.all_books"))
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"List of all books", response.data)
