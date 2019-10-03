@@ -1,12 +1,20 @@
 # REPO UNDER MAINTENANCE :construction:
 
 # book_manager
-This repo contains a simple web based book manager made as a recruitment process task.
+This repo contains a simple app - web based book manager - made as a recruitment process task.
 
 [![Build Status](https://travis-ci.org/mihalw28/book_manager.svg?branch=master)](https://travis-ci.org/mihalw28/book_manager) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 
-## General
+## Table of contents
+ - [General](General)
+ - [Tech](Tech)
+ - [Run](Run)
+ - [Tests](Tests)
+ - [License](License)
+ 
+ 
+## General 
  - Create a simple web based book manager (Task 1), code in master branch.
  - Create extra functionality (Task 2) on top of Task 1 in separate branch.
  - Focus on demonstrating your coding and architectural design skills.
@@ -40,16 +48,26 @@ This repo contains a simple web based book manager made as a recruitment process
   
 
 ## Tech - built with
-  - Python
+  - Python 3.7 :snake:
   - Flask
   - SQLAlchemy
-  - TBU
+  - WTForms
+  
+  
+## Run
+TBU
+
 
 ## Tests
-TBU
+```
+
+$ python -m unittest discover
+
+```
 
 ## Deployment
 TBU
+
 
 ## License
 
