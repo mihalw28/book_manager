@@ -1,6 +1,4 @@
-# REPO UNDER MAINTENANCE :construction:
-
-# book_manager
+# book_manager :book:
 This repo contains a simple app - web based book manager - made as a recruitment process task.
 
 [![Build Status](https://travis-ci.org/mihalw28/book_manager.svg?branch=master)](https://travis-ci.org/mihalw28/book_manager) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
@@ -55,18 +53,59 @@ This repo contains a simple app - web based book manager - made as a recruitment
   
   
 ## Run
-TBU
+
+Below instructions are prepared for MS Windows with git bash used as a terminal shell.
+
+#### Clone
+The whole functionality of this app is not located in master branch (yet). Instead of that, it is located in task_2 branch. To clone task_2 branch to your local:
+```
+$ git clone https://github.com/mihalw28/book_manager.git --branch task_2 --single_branch <new-folder-to-create>
+$ cd <new-folder-to-create>
+```
+
+#### Venv
+Next set up and activate virtual environment:
+```
+$ python -m venv venv
+$ source venv/scripts/activate
+```
+
+#### Config
+Install dependencies and set up env variables
+```
+$ pip install -r requirements.txt
+$ export FLASK_APP=book_manager.py
+$ export SECRET_KEY=something_secret
+```
+For more convenience it is a common practise to store environment variables in seperate file. More [info](https://exploreflask.com/en/latest/configuration.html#the-simple-case).  
+
+#### Database
+```
+$ flask db migrate
+$ flask db upgrade
+```
+
+#### Start
+Fire up the app
+```
+$ flask run
+```
+And finally check http://127.0.0.1:5000/ in your web browser
 
 
 ## Tests
-```
 
+```
 $ python -m unittest discover
-
 ```
+
 
 ## Deployment
-TBU
+
+To deploy app like this one with relatively small amount of configuration shouldn't be difficult. There are many websites offering these type of services. Among them:
+ - AWS with its [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) or [Lightsail](https://aws.amazon.com/lightsail/)
+ - [Heroku](https://www.heroku.com/)
+ - [PythonAnywhere](https://www.pythonanywhere.com/)
 
 
 ## License
