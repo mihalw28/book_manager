@@ -5,11 +5,11 @@ This repo contains a simple app - web based book manager - made as a recruitment
 
 
 ## Table of contents
- - [General](General)
- - [Tech](Tech)
- - [Run](Run)
- - [Tests](Tests)
- - [License](License)
+ - [General](#general)
+ - [Tech](#tech---built-with)
+ - [Run](#run)
+ - [Tests](#tests)
+ - [License](#license)
  
  
 ## General 
